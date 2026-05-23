@@ -11,4 +11,4 @@ export const homeHeroImageAlt =
   "Skupina studentů ANOA s nápisem ERASMUS+ a vlajkami EU a partnerských zemí";
 
 /** Vertical focal point — keeps faces above the bottom text scrim. */
-export const homeHeroObjectPosition = "center 22%";
+export const homeHeroObjectPosition = "center 28%";

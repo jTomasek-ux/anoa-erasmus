@@ -49,15 +49,8 @@ export default function Hero() {
         variants={stagger}
         initial="initial"
         animate="animate"
-        className="relative z-10 w-full max-w-6xl px-6 pb-20 pt-32 md:px-10 md:pb-28"
+        className="relative z-10 w-full max-w-6xl px-6 pb-20 pt-8 md:px-10 md:pb-28 md:pt-12"
       >
-        <motion.p
-          variants={fadeUp}
-          className="mb-6 font-sans text-xs font-medium uppercase tracking-[0.25em] text-white/70 drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
-        >
-          ANOA — Erasmus+
-        </motion.p>
-
         <motion.h1
           variants={fadeUp}
           className="font-heading text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
