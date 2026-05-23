@@ -80,7 +80,7 @@ export default function SiteFooter() {
             </nav>
           </div>
           <p className="font-sans text-sm text-white/35">
-            © {new Date().getFullYear()} ANOA Erasmus+
+            © {new Date().getFullYear()}
           </p>
         </div>
       </div>

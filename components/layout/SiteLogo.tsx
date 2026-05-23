@@ -7,7 +7,7 @@ export default function SiteLogo({ priority = false }: { priority?: boolean }) {
     <Link
       href="/"
       className="relative flex shrink-0 items-center"
-      aria-label="ANOA Erasmus+ — úvodní stránka"
+      aria-label="Úvodní stránka"
     >
       <Image
         src={siteLogoSrc}
