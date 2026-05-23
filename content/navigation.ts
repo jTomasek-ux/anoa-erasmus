@@ -83,4 +83,10 @@ export const externalLinks = [
   },
 ];
 
+/** Footer legal links — text should be reviewed by the school’s DPO / lawyer. */
+export const legalNav: NavLink[] = [
+  { label: "Ochrana osobních údajů", href: "/ochrana-osobnich-udaju" },
+  { label: "Podmínky použití", href: "/podminky-pouziti" },
+];
+
 export const contactEmail = "m.najmanova@anoa.cz";

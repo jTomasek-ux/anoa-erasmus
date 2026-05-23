@@ -1,6 +1,11 @@
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import { contactEmail, externalLinks, footerNav } from "@/content/navigation";
+import {
+  contactEmail,
+  externalLinks,
+  footerNav,
+  legalNav,
+} from "@/content/navigation";
 
 export default function SiteFooter() {
   return (
@@ -54,10 +59,26 @@ export default function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 sm:flex-row">
-          <p className="font-sans text-sm text-white/45">
-            Program Erasmus+ — mezinárodní spolupráce a mobilit studentů
-          </p>
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-end">
+          <div className="text-center sm:text-left">
+            <p className="font-sans text-sm text-white/45">
+              Program Erasmus+ — mezinárodní spolupráce a mobilit studentů
+            </p>
+            <nav
+              aria-label="Právní informace"
+              className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 sm:justify-start"
+            >
+              {legalNav.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="font-sans text-xs text-white/40 underline-offset-2 transition-colors hover:text-white/70 hover:underline"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
           <p className="font-sans text-sm text-white/35">
             © {new Date().getFullYear()} ANOA Erasmus+
           </p>
