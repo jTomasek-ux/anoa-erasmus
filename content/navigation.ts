@@ -14,6 +14,7 @@ export const mainNav: NavGroup[] = [
   { label: "Úvod", href: "/" },
   { label: "Projekty", href: "/projekty" },
   { label: "Akreditace", href: "/akreditace" },
+  { label: "Erasmus Days", href: "/erasmus-days" },
   {
     label: "Spolupráce",
     children: [
@@ -67,6 +68,7 @@ export const footerNav: NavLink[] = [
   { label: "Úvod", href: "/" },
   { label: "Projekty", href: "/projekty" },
   { label: "Akreditace", href: "/akreditace" },
+  { label: "Erasmus Days", href: "/erasmus-days" },
   { label: "eTwinning", href: "/spoluprace/etwinning" },
   { label: "Visegrad", href: "/spoluprace/visegrad" },
   { label: "Ostatní spolupráce", href: "/spoluprace/ostatni" },

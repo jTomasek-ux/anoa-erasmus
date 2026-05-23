@@ -3,33 +3,44 @@
 import Image from "next/image";
 import { useState } from "react";
 import { X } from "lucide-react";
-import { akreditaceImageSrc } from "@/content/akreditace-photos";
-
 export type GalleryPhoto = {
-  index: number | "base";
+  src: string;
   alt: string;
 };
 
 export default function ImageGallery({
   photos,
   groupTitle,
+  layout = "grid",
 }: {
   photos: GalleryPhoto[];
   groupTitle?: string;
+  layout?: "grid" | "featured";
 }) {
   const [lightbox, setLightbox] = useState<string | null>(null);
+  const featured = layout === "featured";
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+      <div
+        className={
+          featured
+            ? "grid grid-cols-1"
+            : "grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4"
+        }
+      >
         {photos.map((photo) => {
-          const src = akreditaceImageSrc(photo.index);
+          const { src } = photo;
           return (
             <button
               key={src}
               type="button"
               onClick={() => setLightbox(src)}
-              className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-primary/10 bg-[#E8F0FA] text-left"
+              className={
+                featured
+                  ? "group relative aspect-[4/3] overflow-hidden rounded-2xl border border-primary/10 bg-[#E8F0FA] text-left shadow-md shadow-primary/5"
+                  : "group relative aspect-[4/3] overflow-hidden rounded-xl border border-primary/10 bg-[#E8F0FA] text-left"
+              }
             >
               <Image
                 src={src}
@@ -37,7 +48,11 @@ export default function ImageGallery({
                 fill
                 unoptimized
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                sizes={
+                  featured
+                    ? "(max-width: 768px) 100vw, 50vw"
+                    : "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                }
               />
               <div className="absolute inset-0 bg-primary/0 transition-colors group-hover:bg-primary/10" />
             </button>

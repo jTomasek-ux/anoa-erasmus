@@ -64,6 +64,11 @@ export default function ProjektyPage() {
             </a>
           </li>
           <li>
+            <a href="/erasmus-days" className="text-primary hover:underline">
+              Erasmus Days
+            </a>
+          </li>
+          <li>
             <a href="/spoluprace/etwinning" className="text-primary hover:underline">
               eTwinning spolupráce
             </a>

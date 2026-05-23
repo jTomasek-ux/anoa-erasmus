@@ -16,11 +16,11 @@ export type AkreditacePhotoGroup = {
 export const akreditacePhotoGroups: AkreditacePhotoGroup[] = [
   {
     title: "Villa Nova de Milfontes, Portugalsko 2024",
-    indices: ["base", 1, 2, 3],
+    indices: [1, 2, 3],
   },
   {
     title: "Memmingen, Německo 2023",
-    indices: [4, 5, 6, 7, 8, 9, 10],
+    indices: [4, 5, 6, 7, 9, 10],
   },
   {
     title: "Villa Nova de Milfontes, Portugalsko 2023",
@@ -28,11 +28,11 @@ export const akreditacePhotoGroups: AkreditacePhotoGroup[] = [
   },
   {
     title: "L´Alcudia, Španělsko 2023",
-    indices: [15, 16],
+    indices: [15],
   },
   {
     title: "Alicante, Španělsko 2023",
-    indices: [17, 18],
+    indices: [17],
   },
   {
     title: "Dobrich, Bulharsko 2023",

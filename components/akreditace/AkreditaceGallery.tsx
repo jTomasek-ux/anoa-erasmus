@@ -1,5 +1,8 @@
 import ImageGallery from "@/components/ui/ImageGallery";
-import { akreditacePhotoGroups } from "@/content/akreditace-photos";
+import {
+  akreditaceImageSrc,
+  akreditacePhotoGroups,
+} from "@/content/akreditace-photos";
 import { ProseHeading } from "@/components/layout/Prose";
 
 export default function AkreditaceGallery() {
@@ -12,7 +15,7 @@ export default function AkreditaceGallery() {
             <ImageGallery
               groupTitle={group.title}
               photos={group.indices.map((index) => ({
-                index,
+                src: akreditaceImageSrc(index),
                 alt: `Erasmus+ praxe — ${group.title}`,
               }))}
             />

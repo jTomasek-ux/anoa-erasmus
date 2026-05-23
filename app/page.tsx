@@ -18,6 +18,13 @@ const exploreCards = [
     tag: "Mobilita",
   },
   {
+    title: "Erasmus Days",
+    description:
+      "Každoroční oslava programu Erasmus+ — workshopy, setkání a aktivity ve škole.",
+    href: "/erasmus-days",
+    tag: "Událost",
+  },
+  {
     title: "Informace pro uchazeče",
     description: "Přihláška přes EDUspace, Erasmus+ projekt nebo praxe.",
     href: "/informace-pro-uchazece",
