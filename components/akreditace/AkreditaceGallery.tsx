@@ -13,7 +13,7 @@ export default function AkreditaceGallery() {
               groupTitle={group.title}
               photos={group.indices.map((index) => ({
                 index,
-                alt: `Praxe Erasmus+ — ${group.title}`,
+                alt: `Erasmus+ praxe — ${group.title}`,
               }))}
             />
           </div>

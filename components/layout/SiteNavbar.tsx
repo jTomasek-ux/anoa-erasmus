@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { contactEmail, mainNav, type NavGroup } from "@/content/navigation";
+import SiteLogo from "@/components/layout/SiteLogo";
 
 function isActive(pathname: string, href?: string) {
   if (!href) return false;
@@ -37,22 +38,9 @@ export default function SiteNavbar() {
   }, [menuOpen]);
 
   return (
-    <header
-      className={`sticky top-0 z-50 border-b transition-colors ${
-        onHome
-          ? "border-white/10 bg-[#00468E]/92 backdrop-blur-md"
-          : "border-primary/10 bg-white/95 shadow-sm backdrop-blur-md"
-      }`}
-    >
+    <header className="sticky top-0 z-50 border-b border-primary/10 bg-white/95 shadow-sm backdrop-blur-md transition-colors">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6 md:px-10">
-        <Link
-          href="/"
-          className={`shrink-0 font-heading text-lg tracking-tight ${
-            onHome ? "text-white" : "text-black"
-          }`}
-        >
-          ANOA<span className={onHome ? "text-white/70" : "text-primary"}>+</span>
-        </Link>
+        <SiteLogo priority={onHome} />
 
         <nav className="hidden items-center gap-1 lg:flex">
           {mainNav.map((item) =>
@@ -66,11 +54,9 @@ export default function SiteNavbar() {
                 <button
                   type="button"
                   className={`flex items-center gap-1 rounded-lg px-3 py-2 font-sans text-sm font-medium transition-colors ${
-                    onHome
-                      ? "text-white/85 hover:bg-white/10 hover:text-white"
-                      : isGroupActive(pathname, item)
-                        ? "bg-primary/8 text-primary"
-                        : "text-black/70 hover:bg-[#E8F0FA] hover:text-black"
+                    isGroupActive(pathname, item)
+                      ? "bg-primary/8 text-primary"
+                      : "text-black/70 hover:bg-[#E8F0FA] hover:text-black"
                   }`}
                 >
                   {item.label}
@@ -116,13 +102,9 @@ export default function SiteNavbar() {
                 key={item.label}
                 href={item.href!}
                 className={`rounded-lg px-3 py-2 font-sans text-sm font-medium transition-colors ${
-                  onHome
-                    ? isActive(pathname, item.href)
-                      ? "bg-white/15 text-white"
-                      : "text-white/85 hover:bg-white/10 hover:text-white"
-                    : isActive(pathname, item.href)
-                      ? "bg-primary/8 text-primary"
-                      : "text-black/70 hover:bg-[#E8F0FA] hover:text-black"
+                  isActive(pathname, item.href)
+                    ? "bg-primary/8 text-primary"
+                    : "text-black/70 hover:bg-[#E8F0FA] hover:text-black"
                 }`}
               >
                 {item.label}
@@ -145,7 +127,7 @@ export default function SiteNavbar() {
 
         <button
           type="button"
-          className={`p-2 lg:hidden ${onHome ? "text-white" : "text-black"}`}
+          className="p-2 text-black lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"}
           aria-expanded={menuOpen}
