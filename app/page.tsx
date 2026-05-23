@@ -92,7 +92,7 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 md:px-10">
           <ProseHeading>Prozkoumejte program</ProseHeading>
           <p className="mb-10 max-w-2xl font-sans text-base text-black/55">
-            Všechny sekce původního webu — přehledně na jednom místě.
+            Přehled všech sekcí programu Erasmus+ na naší škole.
           </p>
           <ExploreGrid cards={exploreCards} />
         </div>
