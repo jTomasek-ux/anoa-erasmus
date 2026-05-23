@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
+import AkreditaceGallery from "@/components/akreditace/AkreditaceGallery";
 import PageHeader from "@/components/layout/PageHeader";
 import Prose, { ProseHeading } from "@/components/layout/Prose";
-import PhotoGrid from "@/components/ui/PhotoGrid";
-import { practicePhotos } from "@/content/pages";
 
 export const metadata: Metadata = {
   title: "Akreditace | ANOA Erasmus+",
@@ -83,12 +82,13 @@ export default function AkreditacePage() {
           </p>
         </Prose>
 
-        <ProseHeading as="h3">Fotografie z proběhlých praxí</ProseHeading>
-        <p className="mb-6 font-sans text-sm text-black/50">
-          Níže je přehled destinací, kam naši studenti v rámci praxí vyjížděli.
-          Fotografie doplníme z archivu školy.
-        </p>
-        <PhotoGrid items={practicePhotos} />
+        <div className="mt-16">
+          <ProseHeading as="h3">Fotografie z proběhlých praxí</ProseHeading>
+          <p className="mb-10 font-sans text-sm text-black/50">
+            Pár fotek z již proběhlých praxí — kliknutím obrázek zvětšíte.
+          </p>
+          <AkreditaceGallery />
+        </div>
       </article>
     </>
   );
