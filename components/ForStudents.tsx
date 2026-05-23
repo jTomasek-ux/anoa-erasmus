@@ -23,7 +23,7 @@ const values = [
     Icon: Backpack,
     title: "Praktické zkušenosti",
     description:
-      "Výjezdy do partnerských škol, tematické úkoly a videokonference — zkušenosti, které žádná učebnice nenaučí.",
+      "Výjezdy do partnerských škol, tematické úkoly a videokonference - zkušenosti, které žádná učebnice nenaučí.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function ForStudents() {
             <span className="text-primary"> získáš</span>
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-black/60">
-            Mobilita, jazyky a praktické projekty — Erasmus+ propojuje teorii
+            Mobilita, jazyky a praktické projekty - Erasmus+ propojuje teorii
             ve třídě se zkušenostmi v Evropě.
           </p>
         </div>

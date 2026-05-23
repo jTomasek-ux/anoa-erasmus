@@ -7,7 +7,7 @@ import SectionLabel from "@/components/SectionLabel";
 import { EASE } from "@/components/lib/motion";
 
 const details = [
-  "Každý program má své téma a výstupy jsou vždy jiné — záleží na domluvě mezi zúčastněnými organizacemi.",
+  "Každý program má své téma a výstupy jsou vždy jiné - záleží na domluvě mezi zúčastněnými organizacemi.",
   "Obecně se snažíme vybírat projekty, které prohlubují ekonomické, ekologické a dobrovolnické dovednosti spojené s jazykovou vybaveností.",
   "Studenti se účastní videokonferencí, plní tematické úkoly a v různě velkých skupinách mají možnost vycestovat do partnerských škol.",
 ];

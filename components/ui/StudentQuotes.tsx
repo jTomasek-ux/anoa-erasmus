@@ -1,11 +1,14 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export type StudentQuote = {
   id: string;
   name: string;
+  imageSrc?: string;
+  imageAlt?: string;
   sections: { title: string; content: string }[];
 };
 
@@ -43,20 +46,35 @@ export default function StudentQuotes({ students }: { students: StudentQuote[] }
             transition={{ duration: 0.25 }}
             className="rounded-2xl border border-primary/10 bg-white p-6 md:p-10"
           >
-            <h2 className="font-heading text-2xl capitalize text-black">
-              {current.name}
-            </h2>
-            <div className="mt-8 space-y-8">
-              {current.sections.map((section) => (
-                <div key={section.title}>
-                  <h3 className="font-heading text-lg text-primary">
-                    {section.title}
-                  </h3>
-                  <p className="mt-2 whitespace-pre-line font-sans text-base leading-relaxed text-black/70">
-                    {section.content}
-                  </p>
+            <div className="flex flex-col gap-8 sm:flex-row sm:items-start">
+              {current.imageSrc && (
+                <div className="relative mx-auto aspect-[3/4] w-full max-w-[220px] shrink-0 overflow-hidden rounded-xl bg-[#E8F0FA] sm:mx-0 sm:w-44 md:w-48">
+                  <Image
+                    src={current.imageSrc}
+                    alt={current.imageAlt ?? current.name}
+                    fill
+                    className="object-cover object-center"
+                    sizes="(max-width: 640px) 220px, 192px"
+                  />
                 </div>
-              ))}
+              )}
+              <div className="min-w-0 flex-1">
+                <h2 className="font-heading text-2xl capitalize text-black">
+                  {current.name}
+                </h2>
+                <div className="mt-8 space-y-8">
+                  {current.sections.map((section) => (
+                    <div key={section.title}>
+                      <h3 className="font-heading text-lg text-primary">
+                        {section.title}
+                      </h3>
+                      <p className="mt-2 whitespace-pre-line font-sans text-base leading-relaxed text-black/70">
+                        {section.content}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </motion.div>
         )}

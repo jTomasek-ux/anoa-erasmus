@@ -19,6 +19,9 @@ function isGroupActive(pathname: string, group: NavGroup) {
   return group.children?.some((c) => isActive(pathname, c.href)) ?? false;
 }
 
+const navLinkClass =
+  "whitespace-nowrap rounded-lg px-2 py-2 font-sans text-[13px] font-medium transition-colors xl:px-2.5 xl:text-sm";
+
 export default function SiteNavbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,28 +42,28 @@ export default function SiteNavbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-primary/10 bg-white/95 shadow-sm backdrop-blur-md transition-colors">
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-6 md:px-10">
+      <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-4 md:px-6 lg:gap-3 lg:px-8">
         <SiteLogo priority={onHome} />
 
-        <nav className="hidden items-center gap-1 lg:flex">
+        <nav className="hidden min-w-0 flex-1 flex-nowrap items-center justify-center gap-0.5 lg:flex xl:gap-1">
           {mainNav.map((item) =>
             item.children ? (
               <div
                 key={item.label}
-                className="relative"
+                className="relative shrink-0"
                 onMouseEnter={() => setOpenDropdown(item.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <button
                   type="button"
-                  className={`flex items-center gap-1 rounded-lg px-3 py-2 font-sans text-sm font-medium transition-colors ${
+                  className={`flex items-center gap-1 ${navLinkClass} ${
                     isGroupActive(pathname, item)
                       ? "bg-primary/8 text-primary"
                       : "text-black/70 hover:bg-[#E8F0FA] hover:text-black"
                   }`}
                 >
                   {item.label}
-                  <ChevronDown size={14} />
+                  <ChevronDown size={14} className="shrink-0" />
                 </button>
                 <AnimatePresence>
                   {openDropdown === item.label && (
@@ -101,7 +104,7 @@ export default function SiteNavbar() {
               <Link
                 key={item.label}
                 href={item.href!}
-                className={`rounded-lg px-3 py-2 font-sans text-sm font-medium transition-colors ${
+                className={`shrink-0 ${navLinkClass} ${
                   isActive(pathname, item.href)
                     ? "bg-primary/8 text-primary"
                     : "text-black/70 hover:bg-[#E8F0FA] hover:text-black"
@@ -113,13 +116,13 @@ export default function SiteNavbar() {
           )}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden shrink-0 items-center lg:flex">
           <motion.a
             href={`mailto:${contactEmail}`}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
-            className="rounded-full bg-primary px-5 py-2.5 font-sans text-sm font-semibold text-white"
+            className="whitespace-nowrap rounded-full bg-primary px-4 py-2 font-sans text-[13px] font-semibold text-white xl:px-5 xl:py-2.5 xl:text-sm"
           >
             Kontakt
           </motion.a>
@@ -127,7 +130,7 @@ export default function SiteNavbar() {
 
         <button
           type="button"
-          className="p-2 text-black lg:hidden"
+          className="ml-auto shrink-0 p-2 text-black lg:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label={menuOpen ? "Zavřít menu" : "Otevřít menu"}
           aria-expanded={menuOpen}
@@ -175,7 +178,7 @@ export default function SiteNavbar() {
                 href={`mailto:${contactEmail}`}
                 className="mt-2 block rounded-full bg-primary px-4 py-3 text-center font-sans text-sm font-semibold text-white"
               >
-                Kontakt — {contactEmail}
+                Kontakt - {contactEmail}
               </a>
             </nav>
           </motion.div>

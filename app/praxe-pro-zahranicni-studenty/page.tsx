@@ -11,7 +11,15 @@ export const metadata: Metadata = {
     "ANOA přijímá studenty ze zahraničních partnerských škol na praxi v Praze.",
 };
 
-const placements = [
+const placements: {
+  period: string;
+  school: string;
+  detail: string;
+  link?: string;
+  imageSrc: string;
+  imageAlt: string;
+  imagePosition?: string;
+}[] = [
   {
     period: "Únor 2020",
     school: "Lycée Depoorter – Hazebrouck, Francie",
@@ -19,6 +27,7 @@ const placements = [
     link: "http://www.lycee-depoorter.com/",
     imageSrc: praxeZahranicniImages.unor2020,
     imageAlt: "Studentky z Lycée Depoorter na praxi v Praze, únor 2020",
+    imagePosition: "center 18%",
   },
   {
     period: "Březen 2020",
@@ -29,6 +38,7 @@ const placements = [
     imageSrc: praxeZahranicniImages.brezen2020,
     imageAlt:
       "Studentky z Lycée Depoorter na praxi ve Vojenské nemocnici, březen 2020",
+    imagePosition: "center 22%",
   },
   {
     period: "Březen – květen 2022",
@@ -54,50 +64,56 @@ export default function PraxeZahranicniPage() {
         ]}
       />
       <article className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
-        <div className="overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm">
-          <div className="relative aspect-[16/7] w-full md:aspect-[21/8]">
-            <Image
-              src={praxeZahranicniImages.headline}
-              alt="Erasmus+ a ANOA — praxe pro zahraniční studenty"
-              fill
-              priority
-              className="object-contain object-center p-4 md:p-6"
-              sizes="(max-width: 768px) 100vw, 1152px"
-            />
-          </div>
-        </div>
+        <section className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-14 xl:gap-16">
+          <div className="flex flex-col gap-7 lg:gap-8">
+            <div className="max-w-xl">
+              <p className="font-sans text-xs font-semibold uppercase tracking-[0.22em] text-primary/55">
+                Praxe v Praze
+              </p>
+              <h2 className="mt-3 font-heading text-[clamp(2rem,3.8vw,2.875rem)] leading-[1.08] tracking-tight text-black">
+                Spolupráci se u nás
+                <br />
+                <span className="text-primary">meze nekladou.</span>
+              </h2>
+              <div
+                aria-hidden
+                className="mt-5 h-1 w-14 rounded-full bg-primary/75"
+              />
+            </div>
 
-        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(260px,340px)] lg:items-start">
-          <Prose>
-            <p>
-              Nejen, že se snažíme pro naše studenty nalézt nejlepší praxe v
-              zahraničí, ale také je naší snahou vyhovět žádostem partnerských
-              škol a nalézt praxe pro studenty ze zahraničí.
-            </p>
-            <p>
-              Pokud byste měli příležitost přijmout tyto studenty, budeme rádi o
-              zaslání jakékoliv nabídky na{" "}
-              <a
-                href={`mailto:${contactEmail}`}
-                className="font-medium text-primary hover:underline"
-              >
-                {contactEmail}
-              </a>
-              . Předem děkujeme.
-            </p>
-          </Prose>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-primary/10 bg-[#E8F0FA] shadow-sm">
-            <Image
-              src={praxeZahranicniImages.intro}
-              alt="Spolupráci se u nás meze nekladou"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 1024px) 100vw, 340px"
-            />
+            <Prose className="max-w-none lg:py-0">
+              <p>
+                Nejen, že se snažíme pro naše studenty nalézt nejlepší praxe v
+                zahraničí, ale také je naší snahou vyhovět žádostem partnerských
+                škol a nalézt praxe pro studenty ze zahraničí.
+              </p>
+              <p>
+                Pokud byste měli příležitost přijmout tyto studenty, budeme rádi o
+                zaslání jakékoliv nabídky na{" "}
+                <a
+                  href={`mailto:${contactEmail}`}
+                  className="font-medium text-primary hover:underline"
+                >
+                  {contactEmail}
+                </a>
+                . Předem děkujeme.
+              </p>
+            </Prose>
           </div>
-        </div>
+          <Image
+            src={praxeZahranicniImages.headline}
+            alt="Erasmus+ a ANOA - praxe pro zahraniční studenty"
+            width={960}
+            height={540}
+            priority
+            className="h-auto w-full max-w-xl justify-self-center lg:max-w-none lg:justify-self-end"
+            sizes="(max-width: 1024px) 90vw, 520px"
+          />
+        </section>
 
-        <ProseHeading>Proběhlé spolupráce</ProseHeading>
+        <div className="mt-16 md:mt-20">
+          <ProseHeading>Proběhlé spolupráce</ProseHeading>
+        </div>
         <div className="space-y-8">
           {placements.map((p, index) => (
             <div
@@ -112,7 +128,10 @@ export default function PraxeZahranicniPage() {
                     src={p.imageSrc}
                     alt={p.imageAlt}
                     fill
-                    className="object-cover object-center"
+                    className="object-cover"
+                    style={{
+                      objectPosition: p.imagePosition ?? "center",
+                    }}
                     sizes="(max-width: 768px) 100vw, 576px"
                   />
                 </div>

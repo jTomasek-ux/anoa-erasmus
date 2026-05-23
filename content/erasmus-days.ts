@@ -1,4 +1,4 @@
-/** Assets exported from Google Sites — folder under /public. */
+/** Assets exported from Google Sites - folder under /public. */
 const base = "/Erasmus Days";
 
 function asset(fileName: string) {
@@ -7,7 +7,7 @@ function asset(fileName: string) {
 
 export const erasmusDaysPoster = {
   src: asset("PosterCoJsouErasmusDays.jpeg"),
-  alt: "Plakát Erasmus Days 2024 — 14. až 19. října",
+  alt: "Plakát Erasmus Days 2024 - 14. až 19. října",
 };
 
 const galleryFiles = [
@@ -33,7 +33,7 @@ const galleryFiles = [
 
 export const erasmusDaysGalleryPhotos = galleryFiles.map((fileName, index) => ({
   src: asset(fileName),
-  alt: `Erasmus Days na ANOA — fotografie ${index + 1}`,
+  alt: `Erasmus Days na ANOA - fotografie ${index + 1}`,
 }));
 
 export const erasmusDaysImportance = [

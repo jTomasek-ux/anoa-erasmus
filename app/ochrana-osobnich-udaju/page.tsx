@@ -33,7 +33,7 @@ export default function OchranaOsobnichUdajuPage() {
         <ProseHeading>Správce údajů</ProseHeading>
         <Prose>
           <p>
-            Správcem osobních údajů je provozovatel webu — škola ANOA (doplňte
+            Správcem osobních údajů je provozovatel webu - škola ANOA (doplňte
             oficiální název, sídlo a IČO podle údajů školy). Věcné dotazy k
             ochraně údajů směřujte na{" "}
             <a
@@ -50,15 +50,15 @@ export default function OchranaOsobnichUdajuPage() {
         <Prose>
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              Obsah stránek — jména studentů nebo pedagogů uveřejněná se
+              Obsah stránek - jména studentů nebo pedagogů uveřejněná se
               souhlasem (např. názory studentů, tým koordinátorů).
             </li>
             <li>
-              Technické údaje — IP adresa, typ prohlížeče a logy hostingu při
+              Technické údaje - IP adresa, typ prohlížeče a logy hostingu při
               návštěvě webu (bezpečnost a provoz služby).
             </li>
             <li>
-              E-mail — pokud nás kontaktujete přes odkaz{" "}
+              E-mail - pokud nás kontaktujete přes odkaz{" "}
               <code className="text-sm">mailto:</code>; obsah zprávy zpracujeme
               jen za účelem odpovědi.
             </li>
@@ -74,15 +74,15 @@ export default function OchranaOsobnichUdajuPage() {
         <Prose>
           <ul className="list-disc space-y-2 pl-5">
             <li>
-              Informování veřejnosti o programu Erasmus+ — oprávněný zájem
+              Informování veřejnosti o programu Erasmus+ - oprávněný zájem
               správce (čl. 6 odst. 1 písm. f) GDPR).
             </li>
             <li>
-              Zveřejnění citací a jmen — souhlas dotčené osoby nebo oprávněný
+              Zveřejnění citací a jmen - souhlas dotčené osoby nebo oprávněný
               zájem školy při dokumentaci programu (dle interních pravidel
               školy).
             </li>
-            <li>Provoz a zabezpečení webu — oprávněný zájem správce.</li>
+            <li>Provoz a zabezpečení webu - oprávněný zájem správce.</li>
           </ul>
         </Prose>
 
@@ -101,7 +101,7 @@ export default function OchranaOsobnichUdajuPage() {
           <p>
             Údaje mohou zpracovávat smluvní zpracovatelé (hosting, případně
             správce domény). Údaje nepředáváme mimo EU/EHP, pokud hosting nebude
-            nastaven jinak — v takovém případě zajistíme odpovídající záruky.
+            nastaven jinak - v takovém případě zajistíme odpovídající záruky.
           </p>
         </Prose>
 

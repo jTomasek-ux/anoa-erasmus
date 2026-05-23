@@ -15,7 +15,7 @@ export default function SiteLogo({ priority = false }: { priority?: boolean }) {
         width={220}
         height={64}
         priority={priority}
-        className="h-10 w-auto max-w-[200px] md:h-11 md:max-w-[220px]"
+        className="h-9 w-auto max-w-[180px] lg:h-10 lg:max-w-[200px] xl:h-11 xl:max-w-[220px]"
       />
     </Link>
   );

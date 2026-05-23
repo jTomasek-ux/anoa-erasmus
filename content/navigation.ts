@@ -24,9 +24,14 @@ export const mainNav: NavGroup[] = [
         description: "Online projekty a videokonference",
       },
       {
+        label: "Visegrad Project",
+        href: "/spoluprace/visegrad-project",
+        description: "Ekologické cestování — Polsko, Margonin",
+      },
+      {
         label: "Visegrad — Slovensko",
         href: "/spoluprace/visegrad",
-        description: "Ekologické cestování a módní přehlídka",
+        description: "EKORAY, recyklace a módní přehlídka",
       },
       {
         label: "Ostatní spolupráce",
@@ -70,7 +75,8 @@ export const footerNav: NavLink[] = [
   { label: "Akreditace", href: "/akreditace" },
   { label: "Erasmus Days", href: "/erasmus-days" },
   { label: "eTwinning", href: "/spoluprace/etwinning" },
-  { label: "Visegrad", href: "/spoluprace/visegrad" },
+  { label: "Visegrad Project", href: "/spoluprace/visegrad-project" },
+  { label: "Visegrad — Slovensko", href: "/spoluprace/visegrad" },
   { label: "Ostatní spolupráce", href: "/spoluprace/ostatni" },
   { label: "Informace pro uchazeče", href: "/informace-pro-uchazece" },
   { label: "Názory studentů", href: "/nazory-studentu" },
@@ -85,7 +91,7 @@ export const externalLinks = [
   },
 ];
 
-/** Footer legal links — text should be reviewed by the school’s DPO / lawyer. */
+/** Footer legal links - text should be reviewed by the school’s DPO / lawyer. */
 export const legalNav: NavLink[] = [
   { label: "Ochrana osobních údajů", href: "/ochrana-osobnich-udaju" },
   { label: "Podmínky použití", href: "/podminky-pouziti" },

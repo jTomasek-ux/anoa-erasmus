@@ -13,14 +13,14 @@ const exploreCards = [
   {
     title: "Akreditace",
     description:
-      "Akreditace 2021-1-CZ01-KA121-VET-000006611 — mobilita studentů i zaměstnanců.",
+      "Akreditace 2021-1-CZ01-KA121-VET-000006611 - mobilita studentů i zaměstnanců.",
     href: "/akreditace",
     tag: "Mobilita",
   },
   {
     title: "Erasmus Days",
     description:
-      "Každoroční oslava programu Erasmus+ — workshopy, setkání a aktivity ve škole.",
+      "Každoroční oslava programu Erasmus+ - workshopy, setkání a aktivity ve škole.",
     href: "/erasmus-days",
     tag: "Událost",
   },
@@ -43,8 +43,14 @@ const exploreCards = [
     tag: "Spolupráce",
   },
   {
+    title: "Visegrad Project",
+    description: "Ekologické cestování — setkání studentů v Polsku v rámci Visegradských fondů.",
+    href: "/spoluprace/visegrad-project",
+    tag: "Spolupráce",
+  },
+  {
     title: "Visegrad — Slovensko",
-    description: "Ekologické cestování, EKORAY a módní přehlídka z recyklovaných oděvů.",
+    description: "EKORAY, recyklace a módní přehlídka z recyklovaných oděvů.",
     href: "/spoluprace/visegrad",
     tag: "Spolupráce",
   },

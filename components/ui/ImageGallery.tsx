@@ -12,13 +12,19 @@ export default function ImageGallery({
   photos,
   groupTitle,
   layout = "grid",
+  imageFit = "cover",
+  bordered = true,
 }: {
   photos: GalleryPhoto[];
   groupTitle?: string;
   layout?: "grid" | "featured";
+  /** "contain" shows the full image without cropping (letterboxing). */
+  imageFit?: "cover" | "contain";
+  bordered?: boolean;
 }) {
   const [lightbox, setLightbox] = useState<string | null>(null);
   const featured = layout === "featured";
+  const contain = imageFit === "contain";
 
   return (
     <>
@@ -31,6 +37,36 @@ export default function ImageGallery({
       >
         {photos.map((photo) => {
           const { src } = photo;
+          const sizes =
+            featured
+              ? "(max-width: 768px) 100vw, 50vw"
+              : "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw";
+
+          if (contain) {
+            return (
+              <button
+                key={src}
+                type="button"
+                onClick={() => setLightbox(src)}
+                className={
+                  bordered
+                    ? "group block w-full overflow-hidden rounded-xl border border-primary/10 bg-[#E8F0FA] p-2 text-left sm:p-3"
+                    : "group block w-full overflow-hidden text-left"
+                }
+              >
+                <Image
+                  src={src}
+                  alt={photo.alt}
+                  width={1200}
+                  height={1600}
+                  unoptimized
+                  className="h-auto w-full object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+                  sizes={sizes}
+                />
+              </button>
+            );
+          }
+
           return (
             <button
               key={src}
@@ -48,11 +84,7 @@ export default function ImageGallery({
                 fill
                 unoptimized
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes={
-                  featured
-                    ? "(max-width: 768px) 100vw, 50vw"
-                    : "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                }
+                sizes={sizes}
               />
               <div className="absolute inset-0 bg-primary/0 transition-colors group-hover:bg-primary/10" />
             </button>

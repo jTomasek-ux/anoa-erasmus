@@ -7,7 +7,7 @@ import { studentQuotes } from "@/content/pages";
 export const metadata: Metadata = {
   title: "Názory studentů | ANOA Erasmus+",
   description:
-    "Zpětná vazba studentů z mezinárodních projektů Erasmus+ — Rumunsko a další.",
+    "Zpětná vazba studentů z mezinárodních projektů Erasmus+ - Rumunsko a další.",
 };
 
 export default function NazoryStudentuPage() {
@@ -15,7 +15,7 @@ export default function NazoryStudentuPage() {
     <>
       <PageHeader
         title="Názory studentů"
-        description="Děkujeme za zpětnou vazbu — pomáhá nám i dalším uchazečům."
+        description="Děkujeme za zpětnou vazbu - pomáhá nám i dalším uchazečům."
         breadcrumb={[
           { label: "Úvod", href: "/" },
           { label: "Názory studentů" },

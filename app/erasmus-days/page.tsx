@@ -11,7 +11,7 @@ import {
 export const metadata: Metadata = {
   title: "Erasmus Days | ANOA Erasmus+",
   description:
-    "Erasmus Days — mezinárodní oslava programu Erasmus+ a aktivit Anglo-německé obchodní akademie.",
+    "Erasmus Days - mezinárodní oslava programu Erasmus+ a aktivit Anglo-německé obchodní akademie.",
 };
 
 export default function ErasmusDaysPage() {
@@ -87,7 +87,7 @@ export default function ErasmusDaysPage() {
         <div className="mt-16 md:mt-20">
           <ProseHeading as="h3">Fotografie z Erasmus Days</ProseHeading>
           <p className="mb-10 mt-3 font-sans text-sm text-black/50">
-            Aktivity a setkání naší školy během Erasmus Days — kliknutím
+            Aktivity a setkání naší školy během Erasmus Days - kliknutím
             fotografii zvětšíte.
           </p>
           <ErasmusDaysGallery />

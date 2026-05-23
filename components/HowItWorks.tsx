@@ -28,7 +28,7 @@ const steps = [
     number: "04",
     title: "Mobilita",
     description:
-      "Výjezd do partnerské školy — praktické zkušenosti, které nelze nahradit výukou ve třídě.",
+      "Výjezd do partnerské školy - praktické zkušenosti, které nelze nahradit výukou ve třídě.",
   },
   {
     number: "05",
@@ -53,8 +53,7 @@ export default function HowItWorks() {
             <span className="text-primary"> k mobilitě</span>
           </h2>
           <p className="mt-4 font-sans text-base leading-relaxed text-black/60">
-            Každý projekt má svůj rytmus, ale obecný postup zůstává stejný —
-            od domluvy po praktické zkušenosti v Evropě.
+            Každý projekt má svůj rytmus, ale obecný postup zůstává stejný - od domluvy po praktické zkušenosti v Evropě.
           </p>
         </div>
 

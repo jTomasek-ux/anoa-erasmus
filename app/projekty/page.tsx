@@ -5,7 +5,7 @@ import Prose, { ProseHeading } from "@/components/layout/Prose";
 export const metadata: Metadata = {
   title: "Projekty | ANOA Erasmus+",
   description:
-    "Projektové Erasmus+ — spolupráce mezi institucemi, videokonference a výjezdy studentů.",
+    "Projektové Erasmus+ - spolupráce mezi institucemi, videokonference a výjezdy studentů.",
 };
 
 export default function ProjektyPage() {
@@ -23,7 +23,7 @@ export default function ProjektyPage() {
         <Prose>
           <p>
             Výhodou těchto projektů je jejich rozmanitost náplně. Každý program
-            má své téma a výstupy jsou vždy jiné — vždy záleží na domluvě mezi
+            má své téma a výstupy jsou vždy jiné - vždy záleží na domluvě mezi
             organizacemi.
           </p>
           <p>
@@ -71,6 +71,19 @@ export default function ProjektyPage() {
           <li>
             <a href="/spoluprace/etwinning" className="text-primary hover:underline">
               eTwinning spolupráce
+            </a>
+          </li>
+          <li>
+            <a
+              href="/spoluprace/visegrad-project"
+              className="text-primary hover:underline"
+            >
+              Visegrad Project
+            </a>
+          </li>
+          <li>
+            <a href="/spoluprace/visegrad" className="text-primary hover:underline">
+              Visegrad — Slovensko
             </a>
           </li>
           <li>

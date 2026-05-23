@@ -62,7 +62,7 @@ export default function SiteFooter() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-end">
           <div className="text-center sm:text-left">
             <p className="font-sans text-sm text-white/45">
-              Program Erasmus+ — mezinárodní spolupráce a mobilit studentů
+              Program Erasmus+ - mezinárodní spolupráce a mobilit studentů
             </p>
             <nav
               aria-label="Právní informace"

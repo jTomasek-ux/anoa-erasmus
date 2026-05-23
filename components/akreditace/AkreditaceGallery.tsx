@@ -16,7 +16,7 @@ export default function AkreditaceGallery() {
               groupTitle={group.title}
               photos={group.indices.map((index) => ({
                 src: akreditaceImageSrc(index),
-                alt: `Erasmus+ praxe — ${group.title}`,
+                alt: `Erasmus+ praxe - ${group.title}`,
               }))}
             />
           </div>

@@ -1,29 +1,31 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHeader from "@/components/layout/PageHeader";
 import Prose, { ProseHeading } from "@/components/layout/Prose";
+import { milenaNajmanovaPhoto } from "@/content/tym";
 
 export const metadata: Metadata = {
   title: "Tým mezinárodní spolupráce | ANOA Erasmus+",
   description:
-    "Tým ANOA Erasmus+ — koordinátoři mezinárodní spolupráce a mobility.",
+    "Tým ANOA Erasmus+ - koordinátoři mezinárodní spolupráce a mobility.",
 };
 
 const qa = [
   {
     q: "Děláte Vaši práci ráda? A proč?",
-    a: "Ano — kdyby mě nebavila, už bych dělala něco jiného. Moc mě baví kontakt s mladší generací, sledovat, jak během čtyř let rostou a připravují se na budoucí život.",
+    a: "Ano - kdyby mě nebavila, už bych dělala něco jiného. Moc mě baví kontakt s mladší generací, sledovat, jak během čtyř let rostou a připravují se na budoucí život.",
   },
   {
-    q: "Proč jste se stala součástí týmu ANOA — Mezinárodní spolupráce?",
-    a: "Mezinárodní spolupráci se na škole věnuji před čtyřmi lety. Ve firmě jsem byla denně v kontaktu se zahraničím — teorii o mezinárodní spolupráci nestačí vysvětlovat, člověk si to musí zažít.",
+    q: "Proč jste se stala součástí týmu ANOA - Mezinárodní spolupráce?",
+    a: "Mezinárodní spolupráci se na škole věnuji před čtyřmi lety. Ve firmě jsem byla denně v kontaktu se zahraničím - teorii o mezinárodní spolupráci nestačí vysvětlovat, člověk si to musí zažít.",
   },
   {
     q: "Který pobyt v zahraničí Vás profesně nejvíce formoval?",
-    a: "V mládí jsem procestovala půlku světa. Největší vliv měla práce pro švýcarskou pobočku — kombinace švýcarského prostředí s nadřízenou z Hong Kongu mě naučila nový přístup k práci.",
+    a: "V mládí jsem procestovala půlku světa. Největší vliv měla práce pro švýcarskou pobočku - kombinace švýcarského prostředí s nadřízenou z Hong Kongu mě naučila nový přístup k práci.",
   },
   {
     q: "Z čeho míváte největší radost?",
-    a: "Ve škole, když se studentům něco povede — certifikáty, Erasmus+, úspěch na videokonferencích. V soukromém životě rodina a čas s ní.",
+    a: "Ve škole, když se studentům něco povede - certifikáty, Erasmus+, úspěch na videokonferencích. V soukromém životě rodina a čas s ní.",
   },
   {
     q: "Na čem právě pracujete?",
@@ -63,21 +65,37 @@ export default function TymPage() {
           </p>
         </Prose>
 
-        <div className="mt-16 rounded-2xl border border-primary/10 bg-[#E8F0FA] p-8 md:p-12">
-          <ProseHeading as="h3">Milena Najmanová</ProseHeading>
-          <Prose>
-            <p>
-              Patnáct let jsem pracovala v mezinárodní firmě, do školství jsem
-              měla hodně daleko. Shodou okolností jsem se dostala k doučování
-              angličtiny a zjistila, že mě to baví — proto jsem si dodělala
-              vzdělání a kompletně vyměnila obor.
-            </p>
-            <p>
-              Znalost teorie je základem, nikoli cílem. Žijeme v době, kdy
-              teoretické informace shání každý za pár minut — důležitá je
-              připravenost je aplikovat v praxi.
-            </p>
-          </Prose>
+        <div className="mt-16 overflow-hidden rounded-2xl border border-primary/10 bg-[#E8F0FA] p-8 md:p-12">
+          <div className="grid items-start gap-8 md:grid-cols-[min(280px,36%)_1fr] md:gap-10">
+            <div className="relative mx-auto aspect-[3/4] w-full max-w-[280px] overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-md shadow-primary/5">
+              <Image
+                src={milenaNajmanovaPhoto.src}
+                alt={milenaNajmanovaPhoto.alt}
+                fill
+                unoptimized
+                className="object-cover"
+                sizes="(max-width: 768px) 280px, 280px"
+                priority
+              />
+            </div>
+
+            <div>
+              <ProseHeading as="h3">Milena Najmanová</ProseHeading>
+              <Prose>
+                <p>
+                  Patnáct let jsem pracovala v mezinárodní firmě, do školství
+                  jsem měla hodně daleko. Shodou okolností jsem se dostala k
+                  doučování angličtiny a zjistila, že mě to baví - proto jsem si
+                  dodělala vzdělání a kompletně vyměnila obor.
+                </p>
+                <p>
+                  Znalost teorie je základem, nikoli cílem. Žijeme v době, kdy
+                  teoretické informace shání každý za pár minut - důležitá je
+                  připravenost je aplikovat v praxi.
+                </p>
+              </Prose>
+            </div>
+          </div>
 
           <div className="mt-10 space-y-6 border-t border-primary/10 pt-10">
             {qa.map((item) => (

@@ -6,7 +6,7 @@ import Prose, { ProseHeading } from "@/components/layout/Prose";
 export const metadata: Metadata = {
   title: "Akreditace | ANOA Erasmus+",
   description:
-    "Akreditace Erasmus+ 2021-1-CZ01-KA121-VET-000006611 — mobilita studentů a zaměstnanců ANOA.",
+    "Akreditace Erasmus+ 2021-1-CZ01-KA121-VET-000006611 - mobilita studentů a zaměstnanců ANOA.",
 };
 
 export default function AkreditacePage() {
@@ -85,7 +85,7 @@ export default function AkreditacePage() {
         <div className="mt-16">
           <ProseHeading as="h3">Fotografie z proběhlých praxí</ProseHeading>
           <p className="mb-10 font-sans text-sm text-black/50">
-            Pár fotek z již proběhlých praxí — kliknutím obrázek zvětšíte.
+            Pár fotek z již proběhlých praxí - kliknutím obrázek zvětšíte.
           </p>
           <AkreditaceGallery />
         </div>

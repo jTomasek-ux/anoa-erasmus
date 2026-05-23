@@ -58,17 +58,34 @@ export default function StinovaniPage() {
         ]}
       />
       <article className="mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-20">
-        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] lg:gap-12">
-          <div>
-            <ProseHeading>Stínování</ProseHeading>
-            <Prose>
-              <p>
-                „Žádný učený z nebe nespadl.“ Spolupráce se zahraničními kolegy
-                — nebo „víc hlav, víc ví.“ Informace z univerzit i z praxe dává
-                smysl sladit v diskuzi s kolegy, jak se to dělá jinde.
+        <section className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:gap-14 xl:gap-16">
+          <div className="flex flex-col gap-7 lg:gap-8">
+            <div className="max-w-xl">
+              <p className="font-sans text-xs font-semibold uppercase tracking-[0.22em] text-primary/55">
+                Stínování
               </p>
-              <p className="font-heading text-lg text-primary">
-                Nové tváře, kultury, diskuse v cizím jazyce — proč ne?!
+              <h2 className="mt-3 font-heading text-[clamp(2rem,3.8vw,2.875rem)] leading-[1.08] tracking-tight text-black">
+                Víc hlav,
+                <br />
+                <span className="text-primary">víc zkušeností.</span>
+              </h2>
+              <div
+                aria-hidden
+                className="mt-5 h-1 w-14 rounded-full bg-primary/75"
+              />
+            </div>
+
+            <Prose className="max-w-none">
+              <p className="font-heading text-lg italic leading-snug text-black/75">
+                „Žádný učený z nebe nespadl.“
+              </p>
+              <p>
+                Spolupráce se zahraničními kolegy - nebo „víc hlav, víc ví.“
+                Informace z univerzit i z praxe dává smysl sladit v diskuzi s
+                kolegy, jak se to dělá jinde.
+              </p>
+              <p className="border-l-2 border-primary/25 pl-4 font-heading text-lg leading-snug text-primary">
+                Nové tváře, kultury, diskuse v cizím jazyce - proč ne?!
               </p>
             </Prose>
           </div>
@@ -79,10 +96,10 @@ export default function StinovaniPage() {
             width={1280}
             height={719}
             priority
-            className="h-auto w-full rounded-xl object-contain"
+            className="h-auto w-full rounded-xl object-contain lg:justify-self-end"
             sizes="(max-width: 1024px) 100vw, 620px"
           />
-        </div>
+        </section>
 
         <ProseHeading as="h3">Proběhlé návštěvy</ProseHeading>
         <div className="space-y-8">
