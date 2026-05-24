@@ -24,8 +24,8 @@ export type PraxePlacement = {
 export const praxePlacements: PraxePlacement[] = [
   {
     period: "Únor 2020",
-    school: "Studentky z Lycee Depoorter",
-    country: "Francie",
+    school: "Studentky z Lycee Depoorter - Hazebrouck, Francie",
+    country: "",
     detail: "Studentky absolvovaly praxe v kanadské školce v Praze.",
     link: "http://www.lycee-depoorter.com/",
     image: {
@@ -35,8 +35,8 @@ export const praxePlacements: PraxePlacement[] = [
   },
   {
     period: "Březen 2020",
-    school: "Studentky z Lycee Depoorter",
-    country: "Francie",
+    school: "Studentky z Lycee Depoorter - Hazebrouck, Francie",
+    country: "",
     detail:
       "Studentky absolvovaly praxe v Dobrovolnickém centru ve Vojenské nemocnici v Praze.",
     link: "http://www.lycee-depoorter.com/",

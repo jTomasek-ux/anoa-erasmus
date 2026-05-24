@@ -22,7 +22,7 @@ const placements: {
 }[] = [
   {
     period: "Únor 2020",
-    school: "Studentky z Lycee Depoorter",
+    school: "Studentky z Lycee Depoorter - Hazebrouck, Francie",
     detail: "Praxe v kanadské školce v Praze.",
     link: "http://www.lycee-depoorter.com/",
     imageSrc: praxeZahranicniImages.unor2020,
@@ -31,7 +31,7 @@ const placements: {
   },
   {
     period: "Březen 2020",
-    school: "Studentky z Lycee Depoorter",
+    school: "Studentky z Lycee Depoorter - Hazebrouck, Francie",
     detail:
       "Praxe v Dobrovolnickém centru ve Vojenské nemocnici v Praze.",
     link: "http://www.lycee-depoorter.com/",
