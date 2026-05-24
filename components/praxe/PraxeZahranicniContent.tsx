@@ -74,9 +74,11 @@ export default function PraxeZahranicniContent({
                     <h3 className="mt-2 font-heading text-xl text-black md:text-2xl">
                       {placement.school}
                     </h3>
-                    <p className="mt-1 font-sans text-sm font-medium text-black/45">
-                      {placement.country}
-                    </p>
+                    {placement.country ? (
+                      <p className="mt-1 font-sans text-sm font-medium text-black/45">
+                        {placement.country}
+                      </p>
+                    ) : null}
                     <p className="mt-4 font-sans text-base leading-relaxed text-black/65">
                       {placement.detail}
                     </p>
