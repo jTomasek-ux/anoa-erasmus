@@ -20,20 +20,20 @@ const visits: {
   imagePosition?: string;
 }[] = [
   {
-    period: "Březen 2022",
-    names: "Alicia a Chemi",
-    origin: "Valencia, Španělsko",
-    link: "https://www.maristasalgemesi.com/",
+    period: "Červen 2022",
+    names: "Učitelé ze střední ekonomické školy HUNFALVY",
+    origin: "Budapešť, Maďarsko",
+    link: "https://www.hunfalvy-szki.hu/en/",
     imageSrc: stinovaniImages.brezen2022,
     imageAlt:
       "Alicia a Chemi z Valencie s certifikáty po stínování na ANOA, březen 2022",
     imagePosition: "center 12%",
   },
   {
-    period: "Červen 2022",
-    names: "Učitelé ze střední ekonomické školy HUNFALVY",
-    origin: "Budapešť, Maďarsko",
-    link: "https://www.hunfalvy-szki.hu/en/",
+    period: "Březen 2022",
+    names: "Alicia a Chemi",
+    origin: "Valencia, Španělsko",
+    link: "https://www.maristasalgemesi.com/",
     imageSrc: stinovaniImages.cerven2022,
     imageAlt:
       "Učitelé ze školy HUNFALVY na stínování u tabule Erasmus+, červen 2022",
