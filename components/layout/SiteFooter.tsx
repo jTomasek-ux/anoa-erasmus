@@ -1,13 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
-import {
-  contactEmail,
-  externalLinks,
-  footerNav,
-  legalNav,
-} from "@/content/navigation";
+import { useSiteSettings } from "@/components/providers/SiteSettingsProvider";
 
 export default function SiteFooter() {
+  const { footerNav, externalLinks, legalNav, contactEmail, footerTagline } =
+    useSiteSettings();
   return (
     <footer className="mt-auto rounded-t-[2.5rem] bg-primary px-6 pb-10 pt-16 md:px-10">
       <div className="mx-auto max-w-6xl">
@@ -17,7 +16,7 @@ export default function SiteFooter() {
               Stránky
             </p>
             <nav className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-              {footerNav.map((link) => (
+              {(footerNav ?? []).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -34,7 +33,7 @@ export default function SiteFooter() {
               Zdroje a kontakt
             </p>
             <div className="flex flex-col gap-3">
-              {externalLinks.map((link) => (
+              {(externalLinks ?? []).map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
@@ -62,13 +61,14 @@ export default function SiteFooter() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row sm:items-end">
           <div className="text-center sm:text-left">
             <p className="font-sans text-sm text-white/45">
-              Program Erasmus+ - mezinárodní spolupráce a mobilit studentů
+              {footerTagline ??
+                "Program Erasmus+ - mezinárodní spolupráce a mobilit studentů"}
             </p>
             <nav
               aria-label="Právní informace"
               className="mt-3 flex flex-wrap justify-center gap-x-4 gap-y-1 sm:justify-start"
             >
-              {legalNav.map((link) => (
+              {(legalNav ?? []).map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

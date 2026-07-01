@@ -1,8 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import { siteLogoAlt, siteLogoSrc } from "@/content/site-assets";
+import { useSiteSettings } from "@/components/providers/SiteSettingsProvider";
 
 export default function SiteLogo({ priority = false }: { priority?: boolean }) {
+  const { logo } = useSiteSettings();
+  const src = logo?.src ?? siteLogoSrc;
+  const alt = logo?.alt ?? siteLogoAlt;
   return (
     <Link
       href="/"
@@ -10,8 +16,8 @@ export default function SiteLogo({ priority = false }: { priority?: boolean }) {
       aria-label="Úvodní stránka"
     >
       <Image
-        src={siteLogoSrc}
-        alt={siteLogoAlt}
+        src={src}
+        alt={alt}
         width={220}
         height={64}
         priority={priority}

@@ -5,7 +5,8 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
-import { contactEmail, mainNav, type NavGroup } from "@/content/navigation";
+import { useSiteSettings } from "@/components/providers/SiteSettingsProvider";
+import type { NavGroup } from "@/lib/cms/fetch";
 import SiteLogo from "@/components/layout/SiteLogo";
 
 function isActive(pathname: string, href?: string) {
@@ -23,6 +24,7 @@ const navLinkClass =
   "whitespace-nowrap rounded-lg px-2 py-2 font-sans text-[13px] font-medium transition-colors xl:px-2.5 xl:text-sm";
 
 export default function SiteNavbar() {
+  const { mainNav, contactEmail } = useSiteSettings();
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -46,7 +48,7 @@ export default function SiteNavbar() {
         <SiteLogo priority={onHome} />
 
         <nav className="hidden min-w-0 flex-1 flex-nowrap items-center justify-center gap-0.5 lg:flex xl:gap-1">
-          {mainNav.map((item) =>
+          {(mainNav ?? []).map((item) =>
             item.children ? (
               <div
                 key={item.label}
@@ -148,7 +150,7 @@ export default function SiteNavbar() {
             className="overflow-hidden border-t border-primary/10 bg-white lg:hidden"
           >
             <nav className="max-h-[70vh] space-y-1 overflow-y-auto px-4 py-4">
-              {mainNav.map((item) =>
+              {(mainNav ?? []).map((item) =>
                 item.children ? (
                   <div key={item.label} className="py-2">
                     <p className="px-3 py-1 font-sans text-xs font-semibold uppercase tracking-wider text-primary/50">

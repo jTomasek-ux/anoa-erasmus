@@ -1,0 +1,151 @@
+import { defineArrayMember, defineField, defineType } from "sanity";
+
+export const siteSettings = defineType({
+  name: "siteSettings",
+  title: "Nastavení webu",
+  type: "document",
+  groups: [
+    { name: "general", title: "Obecné" },
+    { name: "hero", title: "Úvodní stránka" },
+    { name: "navigation", title: "Menu a patička" },
+  ],
+  fields: [
+    defineField({
+      name: "siteTitle",
+      title: "Název webu (záložka prohlížeče)",
+      type: "string",
+      group: "general",
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: "siteDescription",
+      title: "Popis webu (pro vyhledávače)",
+      type: "text",
+      rows: 3,
+      group: "general",
+    }),
+    defineField({
+      name: "contactEmail",
+      title: "Kontaktní e-mail",
+      type: "string",
+      group: "general",
+      validation: (rule) => rule.required().email(),
+    }),
+    defineField({
+      name: "footerTagline",
+      title: "Text v patičce",
+      type: "text",
+      rows: 2,
+      group: "general",
+    }),
+    defineField({
+      name: "logo",
+      title: "Logo školy",
+      type: "imageWithAlt",
+      group: "general",
+    }),
+    defineField({
+      name: "heroImage",
+      title: "Úvodní fotografie",
+      type: "imageWithAlt",
+      group: "hero",
+    }),
+    defineField({
+      name: "heroHeadlineLine1",
+      title: "Hlavní nadpis — první řádek",
+      type: "string",
+      group: "hero",
+    }),
+    defineField({
+      name: "heroHeadlineLine2",
+      title: "Hlavní nadpis — druhý řádek (zvýrazněný)",
+      type: "string",
+      group: "hero",
+    }),
+    defineField({
+      name: "heroSubtitle",
+      title: "Podnadpis pod hlavním nadpisem",
+      type: "text",
+      rows: 3,
+      group: "hero",
+    }),
+    defineField({
+      name: "heroCtaLabel",
+      title: "Text tlačítka",
+      type: "string",
+      group: "hero",
+    }),
+    defineField({
+      name: "heroCtaHref",
+      title: "Odkaz tlačítka",
+      type: "string",
+      group: "hero",
+    }),
+    defineField({
+      name: "homeIntroHeading",
+      title: "Nadpis úvodního textu",
+      type: "string",
+      group: "hero",
+    }),
+    defineField({
+      name: "homeIntroParagraphs",
+      title: "Úvodní odstavce",
+      type: "array",
+      of: [{ type: "text", rows: 4 }],
+      group: "hero",
+    }),
+    defineField({
+      name: "exploreSectionLabel",
+      title: "Nadpis sekce „Prozkoumejte program“",
+      type: "string",
+      group: "hero",
+    }),
+    defineField({
+      name: "exploreSectionSubtitle",
+      title: "Podnadpis sekce karet",
+      type: "text",
+      rows: 2,
+      group: "hero",
+    }),
+    defineField({
+      name: "exploreCards",
+      title: "Karty na úvodní stránce",
+      type: "array",
+      of: [{ type: "exploreCard" }],
+      group: "hero",
+    }),
+    defineField({
+      name: "mainNav",
+      title: "Hlavní menu",
+      type: "array",
+      of: [{ type: "navGroup" }],
+      group: "navigation",
+    }),
+    defineField({
+      name: "footerNav",
+      title: "Odkazy v patičce",
+      type: "array",
+      of: [{ type: "navLink" }],
+      group: "navigation",
+    }),
+    defineField({
+      name: "externalLinks",
+      title: "Externí odkazy",
+      type: "array",
+      of: [{ type: "navLink" }],
+      group: "navigation",
+    }),
+    defineField({
+      name: "legalNav",
+      title: "Právní odkazy",
+      type: "array",
+      of: [{ type: "navLink" }],
+      group: "navigation",
+    }),
+  ],
+  preview: {
+    prepare() {
+      return { title: "Nastavení webu" };
+    },
+  },
+});

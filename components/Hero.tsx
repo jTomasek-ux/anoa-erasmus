@@ -3,11 +3,8 @@
 import type { Variants } from "framer-motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import {
-  homeHeroImageAlt,
-  homeHeroImageSrc,
-  homeHeroObjectPosition,
-} from "@/content/site-assets";
+import { homeHeroObjectPosition } from "@/content/site-assets";
+import { useSiteSettings } from "@/components/providers/SiteSettingsProvider";
 
 const EASE = [0.25, 0.46, 0.45, 0.94] as [number, number, number, number];
 
@@ -25,14 +22,26 @@ const fadeUp: Variants = {
 };
 
 export default function Hero() {
+  const {
+    heroImage,
+    heroHeadlineLine1,
+    heroHeadlineLine2,
+    heroSubtitle,
+    heroCtaLabel,
+    heroCtaHref,
+  } = useSiteSettings();
+
+  const imageSrc = heroImage?.src ?? "/HomePage/ImageDownloader.jpeg";
+  const imageAlt = heroImage?.alt ?? "Erasmus+ na ANOA";
+
   return (
     <section
       id="uvod"
       className="relative flex min-h-[100dvh] w-full items-end overflow-hidden"
     >
       <Image
-        src={homeHeroImageSrc}
-        alt={homeHeroImageAlt}
+        src={imageSrc}
+        alt={imageAlt}
         fill
         priority
         className="z-0 object-cover"
@@ -55,28 +64,28 @@ export default function Hero() {
           variants={fadeUp}
           className="font-heading text-[clamp(2.75rem,8vw,5.5rem)] leading-[1.05] tracking-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.45)]"
         >
-          Vzdělávání
+          {heroHeadlineLine1 ?? "Vzdělávání"}
           <br />
-          <span className="text-white/90">bez hranic.</span>
+          <span className="text-white/90">{heroHeadlineLine2 ?? "bez hranic."}</span>
         </motion.h1>
 
         <motion.p
           variants={fadeUp}
           className="mt-6 max-w-xl font-sans text-base leading-relaxed text-white/90 md:text-lg"
         >
-          Erasmus+ je vzdělávací program pod záštitou Evropské unie, jehož
-          cílem je podpora spolupráce a mobilit ve všech sférách vzdělávání.
+          {heroSubtitle ??
+            "Erasmus+ je vzdělávací program pod záštitou Evropské unie, jehož cílem je podpora spolupráce a mobilit ve všech sférách vzdělávání."}
         </motion.p>
 
         <motion.div variants={fadeUp} className="mt-10">
           <motion.a
-            href="/informace-pro-uchazece"
+            href={heroCtaHref ?? "/informace-pro-uchazece"}
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             transition={{ type: "spring", stiffness: 400, damping: 30 }}
             className="inline-flex items-center rounded-full bg-white px-7 py-3.5 font-sans text-sm font-semibold text-primary"
           >
-            Zjistit více
+            {heroCtaLabel ?? "Zjistit více"}
           </motion.a>
         </motion.div>
       </motion.div>

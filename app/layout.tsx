@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Host_Grotesk, Inter } from "next/font/google";
-import PageShell from "@/components/layout/PageShell";
 import "./globals.css";
 
 const hostGrotesk = Host_Grotesk({
@@ -39,7 +38,7 @@ export default function RootLayout({
             backgroundSize: "200px 200px",
           }}
         />
-        <PageShell>{children}</PageShell>
+        {children}
       </body>
     </html>
   );
