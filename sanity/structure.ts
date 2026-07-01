@@ -42,13 +42,11 @@ export const structure: StructureResolver = (S) =>
                 S.listItem()
                   .title(title)
                   .child(
-                    S.documentList()
+                    S.document()
+                      .schemaType("page")
+                      .documentId(`page-${slug}`)
                       .title(title)
-                      .filter('_type == "page" && slug.current == $slug')
-                      .params({ slug })
-                      .initialValueTemplates([
-                        S.initialValueTemplateItem("page-by-slug", { slug, title }),
-                      ]),
+                      .initialValueTemplate("page-by-slug", { slug, title }),
                   ),
               ),
             ),
