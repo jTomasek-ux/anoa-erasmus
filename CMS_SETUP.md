@@ -95,10 +95,12 @@ Admin: [http://localhost:3000/admin](http://localhost:3000/admin)
 
 Dokud není Sanity naplněné, web zobrazuje stávající obsah z kódu (záložní režim).
 
-Po vytvoření projektu spusťte:
+Po vytvoření projektu spusťte (jednorázově — naplní admin stávajícím obsahem webu):
 
 ```bash
 npm run seed:cms
 ```
+
+Tím se do Sanity zkopíruje veškerý text, který je teď na webu. Pak v `/admin` uvidíte předvyplněné stránky.
 
 (nebo ručně vytvořte dokument **Nastavení webu** v adminu a postupně doplňte stránky)

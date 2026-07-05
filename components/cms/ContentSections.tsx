@@ -68,15 +68,23 @@ function SectionBlock({ section }: { section: ContentSection }) {
 
     case "relatedLinks":
       return (
-        <ul className="space-y-2">
-          {section.links?.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className="text-[#00468E] underline-offset-4 hover:underline">
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div>
+          {section.heading ? (
+            <h3 className="font-headline text-2xl text-[#00468E]">{section.heading}</h3>
+          ) : null}
+          <ul className={`space-y-2 ${section.heading ? "mt-4" : ""}`}>
+            {section.links?.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  className="text-[#00468E] underline-offset-4 hover:underline"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       );
 
     case "qa":
@@ -93,13 +101,18 @@ function SectionBlock({ section }: { section: ContentSection }) {
 
     case "benefits":
       return (
-        <div className="grid gap-6 md:grid-cols-2">
-          {section.benefits?.map((benefit) => (
-            <div key={benefit.label} className="rounded-2xl border border-black/10 p-6">
-              <p className="font-headline text-lg text-[#00468E]">{benefit.label}</p>
-              <p className="mt-2 text-black/75">{benefit.text}</p>
-            </div>
-          ))}
+        <div>
+          {section.heading ? (
+            <h3 className="mb-6 font-headline text-2xl text-[#00468E]">{section.heading}</h3>
+          ) : null}
+          <div className="grid gap-6 md:grid-cols-2">
+            {section.benefits?.map((benefit) => (
+              <div key={benefit.label} className="rounded-2xl border border-black/10 p-6">
+                <p className="font-headline text-lg text-[#00468E]">{benefit.label}</p>
+                <p className="mt-2 text-black/75">{benefit.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       );
 

@@ -136,7 +136,9 @@ export const contentSection = defineType({
       title: "Nadpis sekce",
       type: "string",
       hidden: ({ parent }) =>
-        !["headingProse", "gallery", "callout"].includes(parent?.sectionType),
+        !["headingProse", "gallery", "callout", "benefits", "relatedLinks"].includes(
+          parent?.sectionType,
+        ),
     }),
     defineField({
       name: "paragraphs",
